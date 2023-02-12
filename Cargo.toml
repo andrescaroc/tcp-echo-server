@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "server",
+]
+
+[profile.ci]
+inherits = "dev"
+debug = false
