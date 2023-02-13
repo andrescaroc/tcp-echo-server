@@ -41,6 +41,9 @@ jobs:
           
       - name: Extract artifact
         run: tar -xvf server-binary.tar
+        
+      - name: Validate extracted binary
+        run: ls -l ./target/release
           
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -61,6 +64,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          network: host
+          no-cache: true
           file: ./Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
