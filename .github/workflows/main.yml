@@ -19,9 +19,6 @@ jobs:
       
     - name: Tar files
       run: tar -cvf server-binary.tar ./target/release/server
-      
-    - name: Tar files
-      run: tar -cvf my_files.tar /path/to/my/directory
 
     - name: Upload binary
       uses: actions/upload-artifact@v3
