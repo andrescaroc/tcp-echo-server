@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tcp-echo-server
+  namespace: tcp-echo
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: tcp-echo.my-domain.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: tcp-echo-server
+            port:
+              number: 8085
+        path: /
+        pathType: ImplementationSpecific
+
