@@ -13,7 +13,7 @@ spec:
         app.kubernetes.io/name: tcp-echo-server
     spec:
       containers:
-      - image: andrescaroc/server:e96343ac
+      - image: andrescaroc/tcp-echo-server:v0.1.8
         name: tcp-echo-container
         ports:
         - name: tcp-port

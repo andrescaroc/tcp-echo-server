@@ -47,8 +47,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 let in_msg = String::from_utf8(buf[0..n].to_vec()).expect("Unable to get buffer");
                 debug!("Received message: {}", &in_msg);
 
-                let out_msg = format!("acknowledge, message received v0.1.7: {}", in_msg);
-                debug!("Acknowledge message v0.1.7: {}", &out_msg);
+                let out_msg = format!("acknowledge, message received v0.1.8: {}", in_msg);
+                debug!("Acknowledge message v0.1.8: {}", &out_msg);
 
                 let out_buf = out_msg.into_bytes();
 
